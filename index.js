@@ -26,6 +26,26 @@ function operate(x, y, operator){
             return divide(x, y);
     }
 }
+
+function calculate(eq){
+    let num = "";
+    for (let i = 0; i < eq.length; i++){
+        if (!SYMBOLS.includes(eq[i])){
+            num += eq[i];
+        }
+        else{
+            operands.push(Number(num));
+            operators.push(eq[i]);
+            num = "";
+        }
+    }
+    if (num != ""){
+        operands.push(Number(num));
+        num = "";
+    }
+    console.log(operands);
+}
+
 const SYMBOLS = ["+", "−", "×", "÷"];
 let operands = [];
 let operators = [];
@@ -36,18 +56,18 @@ const calculator = document.querySelector(".grid_table")
 calculator.addEventListener("click", (e) => {
     text = e.target.textContent;
 
-    if (text === "="){
-        // DO MATH
-    }
-    else if (display.textContent === "0" && text === "0"){
-    }
-    else if (SYMBOLS.includes(text) && SYMBOLS.includes(display.textContent[display.textContent.length - 1])){
+    if (SYMBOLS.includes(text) && SYMBOLS.includes(display.textContent[display.textContent.length - 1])){
         equation = display.textContent.substring(0, display.textContent.length - 1);
         equation += text;
         display.textContent = equation;
     }
     else if (!SYMBOLS.includes(text) && display.textContent === "0"){
         display.textContent = text;
+    }
+    else if (display.textContent === "0" && text === "0"){
+    } 
+    else if (text === "="){
+        calculate(display.textContent);
     }
     else {
         display.textContent += text;
