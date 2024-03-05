@@ -92,59 +92,61 @@ let values = [];
 let coefficient = "";
 const calculator = document.querySelector(".grid_table")
 calculator.addEventListener("click", (e) => {
-    text = e.target.textContent;
+    if (e.target.classList.contains('input_button')){
+        text = e.target.textContent;
+
+        if (text === "="){
+            if (SYMBOLS.includes(display.textContent[display.textContent.length - 1])){
+                let equation = display.textContent.substring(0, display.textContent.length - 1);
+                equation += text;
+                display.textContent = equation;
+            }
     
-    if (text === "="){
-        if (SYMBOLS.includes(display.textContent[display.textContent.length - 1])){
+            display.textContent = calculate(display.textContent);
+            coefficient = display.textContent;
+        }
+        else if (display.textContent == ERROR){
+            display.textContent = "0";
+            coefficient = "";
+        }
+        else if (display.textContent[display.textContent.length - 1] == '.' && 
+                 SYMBOLS.includes(text)){
             let equation = display.textContent.substring(0, display.textContent.length - 1);
             equation += text;
             display.textContent = equation;
+            coefficient = coefficient.substring(0, coefficient.length-1);
         }
-
-        display.textContent = calculate(display.textContent);
-        coefficient = display.textContent;
-    }
-    else if (display.textContent == ERROR){
-        display.textContent = "0";
-        coefficient = "";
-    }
-    else if (display.textContent[display.textContent.length - 1] == '.' && 
-             SYMBOLS.includes(text)){
-        let equation = display.textContent.substring(0, display.textContent.length - 1);
-        equation += text;
-        display.textContent = equation;
-        coefficient = coefficient.substring(0, coefficient.length-1);
-    }
-    // Replace operator
-    else if (SYMBOLS.includes(display.textContent[display.textContent.length - 1]) &&
-             SYMBOLS.includes(text)){
-        let equation = display.textContent.substring(0, display.textContent.length - 1);
-        equation += text;
-        display.textContent = equation;
-        coefficient = "";
-    } 
-    else if (!SYMBOLS.includes(text) && display.textContent === "0"){
-        display.textContent = text;
-        coefficient = text;
-    } 
-    else if (display.textContent === "0" && text === "0"){
-        coefficient = "0";
-    } 
-    else if (coefficient.includes('.') && text == '.'){
-    }
-    else if (coefficient == "" && text == '.'){
-        coefficient = "0.";
-        display.textContent += "0.";
-    }
-    else {
-        display.textContent += text;
-        coefficient += text;
+        // Replace operator
+        else if (SYMBOLS.includes(display.textContent[display.textContent.length - 1]) &&
+                 SYMBOLS.includes(text)){
+            let equation = display.textContent.substring(0, display.textContent.length - 1);
+            equation += text;
+            display.textContent = equation;
+            coefficient = "";
+        } 
+        else if (!SYMBOLS.includes(text) && display.textContent === "0"){
+            display.textContent = text;
+            coefficient = text;
+        } 
+        else if (display.textContent === "0" && text === "0"){
+            coefficient = "0";
+        } 
+        else if (coefficient.includes('.') && text == '.'){
+        }
+        else if (coefficient == "" && text == '.'){
+            coefficient = "0.";
+            display.textContent += "0.";
+        }
+        else {
+            display.textContent += text;
+            coefficient += text;
+        }
+        
+        if (SYMBOLS.includes(text)){
+            coefficient = "";
+        }
     }
     
-    if (SYMBOLS.includes(text)){
-        coefficient = "";
-    }
-    console.log(coefficient);
 })
 
 const AC = document.querySelector(".resetter")
