@@ -1,0 +1,76 @@
+/* 
+    https://www.realtimecolors.com/?colors=060a0a-f3f8f8-629da5-adaed0-8b84b8&fonts=Poppins-Poppins
+    Text: #060a0a
+    Background: #f3f8f8
+    Primary: #629da5
+    Secondary: #adaed0
+    Accent: #8b84b8 
+*/
+
+body{
+    background-color: #f3f8f8;
+    color: #060a0a;
+    font-family: 'Poppins', Courier, monospace;
+    
+}
+
+p{
+    font-size: xx-small;
+}
+.wrapper{
+    display: flex;
+    align-content: center;
+    width: 90%;
+    margin: auto;
+
+}
+
+.large {
+    font-size: small;
+}
+.quote{
+    font-style: italic;
+}
+
+.left_column{
+    flex-basis: 40%;
+    margin: 1em 1em;
+}
+.right_column{
+    flex-basis: 50%;
+    margin: 1em 1em;
+}
+
+.output_row{
+    outline: auto;
+}
+.grid_table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* align-content: center; */
+}
+
+.grid_row{
+    display: flex;
+    width: 100%;
+}
+
+button{
+    width: 3rem;
+    height: 2rem;
+    border-radius: 5px;
+}
+
+.resetter{
+    width: 12rem;
+}
+
+.symbol{
+    background-color: #629da5;
+}
+
+.equals,
+.resetter{
+    background-color: #adaed0;
+}

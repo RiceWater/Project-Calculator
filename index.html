@@ -4,38 +4,67 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Project Calculator</title>
+        <link rel="stylesheet" href="./index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <script src="./index.js" defer></script>
+        
+        
     </head>
     <body>
-        <h1>Calculator</h1>
-        <div class="output_row">
-            <div class="output">0</div>
-            <button class="resetter">AC</button>
-        </div>
-        <div class="grid_table">
-            <div class="grid_row">
-                <button class="input_button">7</button>
-                <button class="input_button">8</button>
-                <button class="input_button">9</button>
-                <button class="input_button">&divide;</button>
+        <div class="wrapper"> 
+            <div class="left_column">
+                <h1>PEMDAS Calculator</h1>
+                <p class="large quote">
+                    See a need, fill a need! &dash; BigWeld Industries. 
+                </p>
+                <p>
+                    That is from the 2005 film called Robots. If you ever need a simple place to
+                    compute arithmetic without using parentheses, this is the place for you!
+                </p>
+                <p>
+                    I&comma; initally&comma; thought the Odin Project requires us to make a PEMDAS calculator, but
+                    I didn&apos;t read that thoroughly and ended up making this one. I remember 
+                    telling myself, 
+                    <span class="quote">
+                        &quot;Why are we being instructed to calculate incorrectly?&quot;
+                    </span>
+                    Only to realize too late that it was deliberately designed that way. But hey, making
+                    a PEMDAS calculator was challenging and fun!
+                </p>
             </div>
-            <div class="grid_row">
-                <button class="input_button">4</button>
-                <button class="input_button">5</button>
-                <button class="input_button">6</button>
-                <button class="input_button">&times;</button>
-            </div>
-            <div class="grid_row">
-                <button class="input_button">1</button>
-                <button class="input_button">2</button>
-                <button class="input_button">3</button>
-                <button class="input_button">&minus;</button>
-            </div>
-            <div class="grid_row">
-                <button class="input_button">0</button>
-                <button class="input_button">&period;</button>
-                <button class="input_button">&equals;</button>
-                <button class="input_button">&plus;</button>
+            <div class="grid_table right_column">
+                <div class="output_row">
+                    <div class="output">0</div>
+                </div>
+                <div class="grid_row">
+                    <button class="resetter">AC</button>
+                </div>
+                <div class="grid_row">
+                    <button class="input_button">7</button>
+                    <button class="input_button">8</button>
+                    <button class="input_button">9</button>
+                    <button class="input_button symbol">&divide;</button>
+                </div>
+                <div class="grid_row">
+                    <button class="input_button">4</button>
+                    <button class="input_button">5</button>
+                    <button class="input_button">6</button>
+                    <button class="input_button symbol">&times;</button>
+                </div>
+                <div class="grid_row">
+                    <button class="input_button">1</button>
+                    <button class="input_button">2</button>
+                    <button class="input_button">3</button>
+                    <button class="input_button symbol">&minus;</button>
+                </div>
+                <div class="grid_row">
+                    <button class="input_button">0</button>
+                    <button class="input_button">&period;</button>
+                    <button class="input_button equals">&equals;</button>
+                    <button class="input_button symbol">&plus;</button>
+                </div>
             </div>
         </div>
     </body>
