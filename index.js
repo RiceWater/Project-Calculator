@@ -113,9 +113,7 @@ calculator.addEventListener("click", (e) => {
         let equation = display.textContent.substring(0, display.textContent.length - 1);
         equation += text;
         display.textContent = equation;
-        console.log(`COEFFICIENT: ${coefficient}`);
         coefficient = coefficient.substring(0, coefficient.length-1);
-        console.log(`COEFFICIENT: ${coefficient}`);
     }
     // Replace operator
     else if (SYMBOLS.includes(display.textContent[display.textContent.length - 1]) &&
@@ -153,5 +151,5 @@ const AC = document.querySelector(".resetter")
 AC.addEventListener("click", () => {
     display.textContent = "0";
     values = [];
-    coefficient = ""
+    coefficient = "";
 })
