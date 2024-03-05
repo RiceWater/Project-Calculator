@@ -82,7 +82,7 @@ function PEMDAS(){
 function calculate(eq){
     extractValues(eq);
     let output =  PEMDAS();
-    return (output % 1 != 0) ? output.toFixed(2) : output;
+    return (output % 1 != 0) ? output.toFixed(4) : output;
 }
 
 const SYMBOLS = ["+", "−", "×", "÷"];
