@@ -101,6 +101,9 @@ calculator.addEventListener("click", (e) => {
                 equation += text;
                 display.textContent = equation;
             }
+            else if (display.textContent == "."){
+                display.textContent = "0."
+            }
     
             display.textContent = calculate(display.textContent);
             coefficient = display.textContent;
